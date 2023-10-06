@@ -1,6 +1,5 @@
 package tn.esprit.spring.entities;
 
-
 import java.io.Serializable;
 import java.util.Date;
 
@@ -18,24 +17,24 @@ import javax.persistence.TemporalType;
 @Table(name = "T_USER")
 public class User implements Serializable {
 
-
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue (strategy = GenerationType.IDENTITY)
-	private Long id;   
-	
-	private String firstName; 
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+
+	private String firstName;
+
 	private String lastName;
-	
+
 	@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
-	
+
 	@Enumerated(EnumType.STRING)
-	Role role; 
-	
-	public User() {	}
+	Role role;
+
+	public User() {
+	}
 
 	public User(String firstName, String lastName, Date dateNaissance, Role role) {
 		super();
@@ -44,7 +43,6 @@ public class User implements Serializable {
 		this.dateNaissance = dateNaissance;
 		this.role = role;
 	}
-
 
 	public User(Long id, String firstName, String lastName, Date dateNaissance, Role role) {
 		super();
@@ -55,17 +53,17 @@ public class User implements Serializable {
 		this.role = role;
 	}
 
-
+	// the way to show User
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", dateNaissance="
 				+ dateNaissance + ", role=" + role + "]";
 	}
 
-
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -73,21 +71,25 @@ public class User implements Serializable {
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lName) {
 		this.lastName = lName;
 	}
+
 	public Date getDateNaissance() {
 		return dateNaissance;
 	}
+
 	public void setDateNaissance(Date dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
+
 	public Role getRole() {
 		return role;
 	}
+
 	public void setRole(Role role) {
 		this.role = role;
 	}
-	
 
 }
